@@ -1,0 +1,29 @@
+extends layout
+block sidebar
+  -object = [{'title':'Member Associations','url':'member-associations','icon':'icon-users'}]
+  -object[1] = {'title':'Continental Confederation','url':'continental-confederation','icon':'icon-globe'}
+  -object[2] = {'title':'Membership issues','url':'continental-confederation','icon':'icon-user-unfollow'}
+  -object[3] = {'title':'Council','url':'continental-confederation','icon':'icon-briefcase'}
+  -object[4] = {'title':'Excutive Committee','url':'continental-confederation','icon':'icon-plus'}
+  -object[5] = {'title':'Committee','url':'continental-confederation','icon':'icon-plus'}
+  -object[6] = {'title':'Commissions','url':'continental-confederation','icon':'icon-plus'}
+  -object[7] = {'title':'Working group (WG)','url':'continental-confederation','icon':'icon-bubbles'}
+  -object[8] = {'title':'Judicial Body','url':'continental-confederation','icon':'icon-plus'}
+  -object[9] = {'title':'Legal Cases','url':'continental-confederation','icon':'icon-plus'}
+  -object[10] = {'title':'Documents','url':'continental-confederation','icon':'icon-book-open'}
+  each val in object
+
+    li.start
+      a(href='governance-#{val.url}.html')
+        i(class='#{val.icon}')
+        span.title
+          =val.title
+        span.selected
+
+block mainpage
+  .page-content-wrapper
+    .page-content
+      block title
+      block breadcrumb
+      .row
+        block main

@@ -1,0 +1,14 @@
+div.hor-menu.hidden-sm.hidden-xs
+  ul.nav.navbar-nav
+    // DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover
+    li.classic-menu-dropdown.active
+      a(href='index.html')
+        | Dashboard
+        span.selected
+    each val in ['Event','Education','Development','Governance','Media and Communications','Finance']
+      li.mega-menu-dropdown
+        a.dropdown-toggle.hover-initialized(data-toggle='dropdown', href='javascript:;', data-hover='megamenu-dropdown', data-close-others='true')
+          =val
+  // BEGIN RESPONSIVE MENU TOGGLER
+  a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')
+  // END RESPONSIVE MENU TOGGLER

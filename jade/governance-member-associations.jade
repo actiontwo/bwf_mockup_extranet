@@ -1,0 +1,88 @@
+extends governance
+block title
+  h3.page-title
+    | Member Associations
+block breadcrumb
+  .page-bar
+    ul.page-breadcrumb
+      li
+        i.fa.fa-home
+        a(href='index.html') Home
+        i.fa.fa-angle-right
+      li
+        a(href='#') Form Stuff
+        i.fa.fa-angle-right
+      li
+        a(href='#') Form Controls
+
+block main
+  .col-md-4
+    .row
+      .col-md-8
+        .form-group
+          select.form-control.input-medium
+            option Bulk Action
+            option Edit
+            option Export to PDF
+            option Export to Excel
+            option Print
+            option Move to Trash
+      .col-md-4
+        button.btn.btn-primary(type='button') Apply
+  .col-md-5
+    .row
+      .col-md-8
+        .form-group
+          select.form-control.input-medium
+            option -- Status --
+            option Paid
+            option UnPaid
+      .col-md-4
+        .btn-group.btn-group-justified
+          a.btn.btn-primary Print
+          a.btn.btn-info Export
+  .col-md-3
+    a.pull-right.btn.btn-success Add New&nbsp
+      i.fa.fa-plus
+
+  .col-md-12
+    div.table-scrollable
+      table#sample_1.table.table-striped.table-bordered.table-hover.dataTable.no-footer
+        thead
+          tr(role='row')
+            th.table-checkbox
+              //.checker
+              //  span
+              input.group-checkable(type='checkbox', data-set='#sample_1 .checkboxes')
+            each val in ['Image','Name','Paid status','Working contact info','Action']
+              th
+                =val
+
+        tbody
+          -n = 0
+          while n < 10
+            tr.gradeX.odd(role='row')
+              td
+                //.checker
+                //  span
+                input.checkboxes(type='checkbox', value='1')
+              td.sorting_1
+                img(src='http://placehold.it/100x100')
+              td
+                | Poul-Erik Høyer
+              td
+                | Paid(Unpaid)
+              td.center
+                ul.list-unstyled
+                  li Unit 17.05, Amoda Buidling, 22 Jalan Imbi, Kuala Lumpur, Malaysia
+                  li +603 2141 7155 (O)
+                  li +603 2143 7155 (F)
+                  li +45 20239394 (M)
+                  li pe.hoyer@bwfbadminton.org
+              td
+                ul.list-inline
+                  li: a.fa.fa-eye(href='' tootip='view')
+                  li: a.fa.fa-edit(href='')
+                  li: a.fa.fa-trash-o(href='')
+            -n++
+  include _panigation.jade
